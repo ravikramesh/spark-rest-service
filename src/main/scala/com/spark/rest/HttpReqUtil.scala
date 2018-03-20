@@ -27,7 +27,7 @@ object HttpReqUtil {
 
   def getStateValue(jsonRes: JSONObject) : (Boolean,String) = {
     val state = jsonRes.obj.get("state").get.asInstanceOf[String]
-
+    /** Session State values are listed in https://livy.incubator.apache.org/docs/latest/rest-api.html#session **/
     if(state == "error" || state == "dead") {
       (false,state)
     } else {
