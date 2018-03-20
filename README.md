@@ -9,7 +9,7 @@ This project demonstrate how to submit the Spark Jobs through REST call.
 
 - Built the spark-analytics spark projects and create the assembly.
 
-       Assembly jar is saved into HDFS /user/hadoop/parking/stream-analytics.jar
+       spark analyics assembly jar is saved into HDFS /user/hadoop/parking/stream-analytics.jar
 
 - Run the application with following parameters
 
