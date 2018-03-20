@@ -6,6 +6,7 @@ import org.apache.http.entity.StringEntity
 import org.apache.http.impl.client.{CloseableHttpClient, HttpClientBuilder}
 import org.apache.http.util.EntityUtils
 
+
 import scala.util.parsing.json.{JSON, JSONObject}
 
 /**
@@ -32,10 +33,7 @@ object JobStatusService {
     val appStatusGet = new HttpGet(s"${clusterConfig.resourcemanager}/ws/v1/cluster/apps/$applicationId")
     val client: CloseableHttpClient = HttpClientBuilder.create().build()
     val response: CloseableHttpResponse = client.execute(appStatusGet)
-    val responseBody = EntityUtils.toString(response.getEntity)
-    println(s"Response payload ${responseBody}")
-    println(s"Response status: ${response.getStatusLine.getStatusCode}")
-    JSON.parseRaw(responseBody).get.asInstanceOf[JSONObject]
+    HttpReqUtil.parseHttpResponse(response)._2
   }
 
   def killApplication(applicationId: String) : Boolean = {
