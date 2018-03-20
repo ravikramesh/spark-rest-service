@@ -1,7 +1,7 @@
 # spark-rest-service
 ### Job Submission using REST API service
 
-Data Engine platform is evolving in recent times and more business interactive platforms are coming up in the market. Customers want to run ad-hoc queries or spark jobs to pull reports from the data warehouse platform. The more interactive way of building ad-hoc job execution platform should supports submitting jobs through REST service and get the status of the jobs as well. Livy service providing this functionality.
+Data Engine platform requires ad-hoc query execution engine to meet customer demands on the fly. Customers want to run ad-hoc queries or spark jobs to pull reports from the data warehouse platform. The one of lacking features in Hadoop stack is submitting jobs via REST service and get the status of the jobs as well. Apache Livy service ( Still incubating projects) provides basic functionalities of the REST requirements.
 
 ---
 
