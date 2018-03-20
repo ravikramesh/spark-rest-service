@@ -43,6 +43,11 @@ object JobSubmitService {
       if(stateResult._2 == "not_started") {
          Thread.sleep(2000)
       }
+     
+      /**
+       If Session State is in success, busy, shutting_down and idle state gives application_id. 
+       Once the application_id is received, we can monitor Job Status through YRAN API call.
+      **/
       val batchStatus = getApplicationBatchStatus(sessionid.toString)
       println("Job Submitted Successfully. batchStatus : "+batchStatus.toString())
     } else {
